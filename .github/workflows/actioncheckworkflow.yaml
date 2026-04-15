@@ -20,7 +20,7 @@ jobs:
 
       with:
 
-        login-server: erikarn.azurecr.io
+        login-server: joukkuern.azurecr.io
 
         username: ${{ secrets.REGISTRY_USERNAME }}
 
@@ -28,17 +28,17 @@ jobs:
  
     - run: |
 
-        docker build . -t erikarn.azurecr.io/erikabuild
+        docker build . -t joukkuern.azurecr.io/joukkuebuild
 
-        docker push erikarn.azurecr.io/erikabuild
+        docker push joukkuern.azurecr.io/joukkuebuild
  
     - uses: azure/webapps-deploy@v2
 
       with:
 
-        app-name: 'erikawebapp'
+        app-name: 'joukkuewebapp'
 
         publish-profile: ${{ secrets.AZURE_WEBAPP_PUBLISH_PROFILE }}
 
-        images: erikarn.azurecr.io/myapp
+        images: joukkuern.azurecr.io/myapp
  
